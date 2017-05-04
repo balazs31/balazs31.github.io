@@ -2,9 +2,7 @@
   <body>
     <head>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    </head>
-    
-    <script>
+       <script>
       $.get('https://diaknapok.kmdsz.ro/2017/eredmenyek-2/', function(data) {
           var result = "";
           var resultJson = [];
@@ -33,5 +31,19 @@
           $('body').html(htmlBody);
       });
     </script>
+    </head>
+    
+    <table>
+        <thead id="headings">
+            <tr>
+                <th id="t_name">Team</th>
+                <th id="t_points">Points</th>
+            </tr>
+        </thead>
+        <tbody id="results">
+            <!-- this will be auto-populated -->
+        </tbody>
+    </table>
+   
   </body>
 </html>
