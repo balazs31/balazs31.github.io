@@ -1,1 +1,37 @@
-Hello
+<html>
+  <body>
+    <head>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    
+    <script>
+      $.get('https://diaknapok.kmdsz.ro/2017/eredmenyek-2/', function(data) {
+          var result = "";
+          var resultJson = [];
+          var htmlBody = "";
+          $('body').html(data);
+          $('.vc_tta-title-text').each(function(i, obj) {
+            var teamResult = obj.innerText.split(' - ');
+            resultJson.push({
+              team: teamResult[0],
+              points: teamResult[1]
+            });
+          });
+          resultJson.sort(function(a, b){
+            return b.points - a.points;
+          });
+
+          for(var i=0; i < resultJson.length; i++) {
+            result += resultJson[i].team + ': ' + resultJson[i].points + '\n';
+            console.log(resultJson[i]);
+            htmlBody += '<tr>'
+                  +'<td>'+(i+1) + '. ' + resultJson[i].team+'</td>'
+                  +'<td>'+resultJson[i].points+'</td>'
+              +'</tr>';
+          }
+
+          $('body').html(htmlBody);
+      });
+    </script>
+  </body>
+</html>
