@@ -3,41 +3,11 @@
 <body>
 
     <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script>
-            $.get('https://cors-anywhere.herokuapp.com/https://diaknapok.kmdsz.ro/2018/eredmenyek-2/', function (data)//Remember, same domain
-            {
-                var result = "";
-                var resultJson = [];
-                var htmlBody = "";
-                $('body').html(data);
-                $('.vc_tta-title-text').each(function (i, obj) {
-                    var teamResult = obj.innerText.split(' - ');
-                    resultJson.push({
-                        team: teamResult[0],
-                        points: teamResult[1]
-                    });
-                });
-                resultJson.sort(function (a, b) {
-                    return b.points - a.points;
-                });
-
-                for (var i = 0; i < resultJson.length; i++) {
-                    result += resultJson[i].team + ': ' + resultJson[i].points + '\n';
-                    console.log(resultJson[i]);
-                    htmlBody += '<tr>'
-                        + '<td>' + (i + 1) + '. ' + resultJson[i].team + '</td>'
-                        + '<td>' + resultJson[i].points + '</td>'
-                        + '</tr>';
-                }
-
-                $('body').html(htmlBody);
-                console.log(data)
-            });
-        </script>
+    
+       
     </head>
 
-    <h1>Loading...</h1>
+  <h1>Hello</h1>
 
 </body>
 
