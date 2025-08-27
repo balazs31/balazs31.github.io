@@ -1,4 +1,4 @@
-Day,Location,GPS Coordinates,Google Maps,Description,Images
+Day,Location,GPS Coordinates,Google Maps,Description,Images,IsCamping
 Day 0 - Wednesday,Arrival & Grocery Shopping,"64.13139335265595, -21.9073740374073",,,
 Day 1 - Thursday,Hrunalaug Hot Spring,"64.13281250850747, -20.2549532386331",https://maps.app.goo.gl/2St9GDau8Xe5rwBd9,Baita - au si dus,https://icelandtrippers.com/wp-content/uploads/2020/06/Hrunalaug-Hot-Springs-small-pool-1600x900.jpg;https://www.motorhomeiceland.com/assets/img/blog/216/hrunalaug-hot-spring-iceland.webp
 Day 1 - Thursday,Gullfoss Waterfall,"64.32710646064416, -20.120033630683448",https://maps.app.goo.gl/QSqst5Q2EqWtw74X8,,https://cdn.sanity.io/images/lf2d8f6r/production/fb67ff713cb228cdd0ec34a2fe9eebf9a0e20cd8-5468x3316.jpg;https://www.carsiceland.com/assets/img/blog/226/featured/gullfoss-waterfall-guide.webp
@@ -33,4 +33,5 @@ Day 7 - Wednesday,Þingvellir National Park,"64.31007539683398, -21.108504743889
 Day 8 - Thursday,TBD,"64.13139335265595, -21.9073740374073",https://maps.app.goo.gl/gKfrfSPpmkGcxSrX6,,
 Day 9 - Friday,Reykjavík City Center,"64.13139335265595, -21.9073740374073",https://maps.app.goo.gl/gKfrfSPpmkGcxSrX6,,
 Extra,Mulagljufur Canyon,"63.9946985820132, -16.457426663453678",https://maps.app.goo.gl/mfFpiBacGFNajSCo8,Hike de 2-3 ore,https://theworldpursuit.com/wp-content/uploads/2023/11/Mulagljufur-Canyon-hike-1.jpg
-Extra,Thakgil hike - Remundargil Loop,"63.548062339136884, -18.91464994479049",https://maps.app.goo.gl/cMsg7QYSvVa42UhNA,Scrie ca e un hike foarte fain de 12km cam 3-5ore: Thakgil is a hidden gem in Southern Iceland close to the famous tourist attractions of Vik and Reynisfara. It’s a short 30 minute detour from the Ring Road but if you have the time I highly recommend spending at least 1 day here.,https://charlieswanderings.com/wp-content/uploads/2024/05/BEST-HIKES-IN-EUROPE-13-819x1024.jpg
+Extra,Thakgil hike - Remundargil Loop,"63.548062339136884, -18.91464994479049",https://maps.app.goo.gl/cMsg7QYSvVa42UhNA,Scrie ca e un hike foarte fain de 12km cam 3-5ore: Thakgil is a hidden gem in Southern Iceland close to the famous tourist attractions of Vik and Reynisfara. It’s a short 30 minute detour from the Ring Road but if you have the time I highly recommend spending at least 1 day here.,https://charlieswanderings.com/wp-content/uploads/2024/05/BEST-HIKES-IN-EUROPE-13-819x1024.jpg,
+Camping,Vik Campsite,"63.41926738798024, -18.995528637300325",https://maps.app.goo.gl/j9duCyHCssafDwjK7,,,true
