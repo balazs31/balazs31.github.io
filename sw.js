@@ -14,11 +14,12 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_NAME)
       .then((cache) => {
         console.log('Opened cache');
-        // Add basic URLs to cache, dynamic assets will be cached on first access
+        // Cache each URL individually and don't fail if some don't exist
         return Promise.allSettled(
           urlsToCache.map(url => 
             cache.add(url).catch(err => {
               console.log(`Failed to cache ${url}:`, err);
+              return null; // Don't fail the entire installation
             })
           )
         );
@@ -30,6 +31,16 @@ self.addEventListener('install', (event) => {
 
 // Fetch event - serve from cache when offline
 self.addEventListener('fetch', (event) => {
+  // Skip non-GET requests
+  if (event.request.method !== 'GET') {
+    return;
+  }
+
+  // Skip chrome-extension and other non-http requests
+  if (!event.request.url.startsWith('http')) {
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request)
       .then((response) => {
@@ -42,12 +53,14 @@ self.addEventListener('fetch', (event) => {
         if (event.request.mode === 'navigate') {
           return fetch(event.request)
             .then((response) => {
-              // Clone and cache the response
-              const responseToCache = response.clone();
-              caches.open(CACHE_NAME)
-                .then((cache) => {
-                  cache.put(event.request, responseToCache);
-                });
+              // Only cache successful responses
+              if (response && response.status === 200 && response.type === 'basic') {
+                const responseToCache = response.clone();
+                caches.open(CACHE_NAME)
+                  .then((cache) => {
+                    cache.put(event.request, responseToCache);
+                  });
+              }
               return response;
             })
             .catch(() => {
